@@ -1,0 +1,1 @@
+java -jar -Dsensiple.reporter.config=C:\workspace\sensiple\QA\testcases\sensiple.properties -DlogfileLoc=C:\log -Dsensiple.execution.parseq=sequential C:\workspace\sensiple\sensipleqa\target\sensipleqa-jar-with-dependencies.jar

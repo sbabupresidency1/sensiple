@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="LocalSuite" verbose="1">
+	<test name="ParticularTest" group-by-instances="true">
+		<classes>
+			<class name="SampleFactory"></class>
+		</classes>
+	</test>
+</suite>

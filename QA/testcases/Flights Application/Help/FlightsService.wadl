@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+	<doc xml:lang="en" title="Flight Service"/>
+	<resources base="http://localhost:%portNum%/">
+		<resource path="HPFlights_REST">
+			<resource path="Flights">
+				<method name="GET" id="GetFlights">
+					<doc xml:lang="en" title="GetFlights">Returns all flights matching the specified parameters. To return all flights, do not specify any parameters</doc>
+					<request>
+						<param name="DepartureCity" type="xsd:string" style="query" required="true" default="London"/>
+						<param name="ArrivalCity" type="xsd:string" style="query" required="true" default="Paris"/>
+						<param name="Date" type="xsd:Date" style="query" required="true" default="0001/01/01"/>
+					</request>
+				</method>
+				<resource path="{FlightNumber}">
+					<param name="FlightNumber" type="xsd:string" style="template" required="true" default="10316"/>
+					<method name="GET" id="GetFlightByNumber">
+						<doc xml:lang="en" title="GetFlights">Returns the flight details for the specified flight number.</doc>
+					</method>
+				</resource>
+			</resource>
+			<resource path="FlightOrders">
+				<method name="GET" id="GetOrders">
+					<doc xml:lang="en" title="GetOrders">Returns all flight orders that match the specified parameters. 
+						To return all flight orders, do not specify any parameters. 
+						If there is an error or no results, it returns an exception.
+					</doc>
+					<request>
+						<param name="Date" type="xsd:Date" style="query" required="true" default="0001/01/01"/>
+						<param name="CustomerName" type="xsd:string" style="query" required="false" default="none"/>
+						<param name="OrderNumber" type="xsd:int" style="query" required="true" default="0"/>
+					</request>
+				</method>
+				<method name="POST" id="ReserveOrder">
+					<doc xml:lang="en" title="GetFlights">
+						Receives XML with the input parameters: Class, CustomerName, DepartureDate, FlightNumber, NumberOfTickets and Format. 
+						Creates a new flight order and returns OrderNumber and TotalPrice.</doc>
+					<request>
+						<representation id="FlightOrderDetails" mediaType="text/xml"/>
+					</request>
+				</method>
+
+				<resource path="{FlightOrder}">
+					<param name="FlightOrder" type="xsd:string" style="template" required="true" default="1"/>
+					<method name="GET" id="GetFlightOrder">
+						<doc xml:lang="en" title="GetFlights">Returns the details of a specific flight order.</doc>
+					</method>
+					<method name="PUT" id="UpdateFlightOrder">
+						<doc xml:lang="en" title="GetFlights">Receives an input parameters: CustomerName, Class, and NumberOfTickets. 
+							Updates a flight's details and returns True or False.</doc>
+						<request>
+							<representation id="UpdateFlightOrderDetailsREST" mediaType="text/xml"/>
+						</request>
+					</method>
+					<method name="DELETE" id="DeleteFlightOrder">
+						<doc xml:lang="en" title="GetFlights">Deletes the specified flight order and returns True or False.</doc>
+					</method>
+				</resource>
+
+				<method name="DELETE" id="DeleteAllFlightOrders">
+					<doc xml:lang="en" title="GetFlights">Deletes all flight orders and returns True or False.</doc>
+				</method>
+
+			</resource>
+		</resource>
+	</resources>
+</application>

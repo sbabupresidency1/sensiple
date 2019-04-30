@@ -1,0 +1,24 @@
+
+.text { font-size: 8pt; font-family: Verdana, Arial; list-style-type: decimal }
+table { font-size: 8pt; font-family: Verdana, Arial }
+.bulltext { font-size: 8pt; font-family: Verdana, Arial; list-style-type: decimal; list-style-image: url(img/list1.gif) }
+.smltext { font-size: 7pt; font-family: Verdana, Arial }
+.hlink   { font-size: 10pt; font-family: Verdana, Arial; font-weight: bold; list-style-image: url("img/list1.gif"); border-bottom: 1px solid #485464 }
+.hl1 { font-size: 10pt; font-family: Verdana, Arial }
+.hl0 { color: #f60; font-size: 9pt; font-family: Verdana, Arial }
+a   { color: #669; font-family: Verdana, Arial; text-decoration: none }
+a:hover   { color: #970000; text-decoration: none }
+.background  { background: white url(img/bg.jpg) no-repeat; width: 100%; height: 85% }
+.head_bg { background: url(img/hl_bg.png) repeat-x }
+.height_25 { height: 20px }
+.framed { padding: 5px; border: solid 2px #54658c }
+body { background-color: #d4d4d4; background-image: url("img/top_bg.gif"); background-repeat: repeat-x; margin: 0; padding: 0 10px 10px; overflow: auto }
+.text_place { background-color: white; padding: 10px 14px; vertical-align: top; border: solid 1px #8e001d }
+.hl2 { color: black; font-size: 20px; font-family: Helvetica, Arial, SunSans-Regular, sans-serif; font-weight: normal; text-align: left; margin-top: 0; margin-bottom: 0; height: 25px; vertical-align: middle; border-bottom: 1px solid #8e001d }
+/*addad
+*/
+table.full { width: 100% }
+td.top_grad { background-image: url("img/top_grad.gif"); background-repeat: repeat-y; width: 180px; height: 18px }
+td.top_right { background-image: url("img/dot_pewter.gif"); text-align: right; height: 18px }
+.height_names { height: 25px }
+table.main { width: 100%; height: 91%; min-height: 90%; max-height: 99% }
